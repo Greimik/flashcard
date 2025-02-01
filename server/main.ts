@@ -5,6 +5,10 @@ import routeStaticFilesFrom from "./util/routeStaticFilesFrom.ts";
 export const app = new Application();
 const router = new Router();
 
+router.get("/",(context) =>{
+  context.response.body = [{id:0,value:"Test"}];
+});
+
 app.use(router.routes());
 app.use(routeStaticFilesFrom([
   `${Deno.cwd()}/client/dist`,
